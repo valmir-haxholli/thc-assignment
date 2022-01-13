@@ -1,0 +1,26 @@
+.container {
+  max-width: 1024px;
+  max-height: 821px;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.content__left {
+  background: linear-gradient(180deg, #0077B5 0%, #0E6795 100%);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.content__logo {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+/* Fonts */
