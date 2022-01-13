@@ -24,3 +24,23 @@
 }
 
 /* Fonts */
+
+@font-face {
+  font-family: "Gotham Book";
+  src: url('./assets/fonts/GothamBook.woff');
+}
+
+@font-face {
+  font-family: "Gotham Medium";
+  src: url('./assets/fonts/GothamMedium.woff');
+}
+
+@font-face {
+  font-family: "Gotham Light";
+  src: url('./assets/fonts/GothamLight.woff');
+}
+
+@font-face {
+  font-family: "Gotham Bold";
+  src: url('./assets/fonts/Gotham-Bold.woff');
+}
