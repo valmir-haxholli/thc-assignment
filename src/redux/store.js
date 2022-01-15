@@ -1,4 +1,4 @@
-import { CreateStore, combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 
 import authReducer from './auth';
@@ -10,3 +10,4 @@ const reducer = combineReducers({
 export default configureStore({
     reducer
 })
+

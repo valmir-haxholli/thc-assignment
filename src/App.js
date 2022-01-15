@@ -1,4 +1,4 @@
-import LoginForm from './components/LoginForm/LoginForm';
+import Login from './containers/Login';
 import { ReactComponent as Logo } from './assets/images/Logo.svg';
 
 import './App.css';
@@ -11,7 +11,7 @@ function App() {
               <Logo className="content__logo" />
           </div>
           <div className='content__right'>
-              <LoginForm />
+              <Login />
           </div>
         </div>
     </div>
