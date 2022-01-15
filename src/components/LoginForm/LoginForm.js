@@ -1,14 +1,29 @@
 import Button from "../Button/Button"; 
 
+import { ReactComponent as Mail } from '../../assets/images/mail.svg';
+import { ReactComponent as Lock } from '../../assets/images/lock.svg';
+import { ReactComponent as View } from '../../assets/images/view.svg';
+
+
 import "./LoginForm.css";
 
 const LoginForm = () => (
     <div className="login">
         <h2>Welcome</h2>
         <form name="login__form">
-            <input placeholder="Email" type="text" />
-            <input placeholder="Password" type="password" />
+            <div className="login__input" >
+                <Mail className="input__img" />
+                <input placeholder="Email" type="text" />
+            </div>
+            <div className="login__input" >
+                <Lock className="input__img" />
+                <input placeholder="Password" type="password" />
+                <View className="input__img img--lock" />
+            </div>
+            <p>Forgot password?</p>
             <Button name="Log In" color="primary" />
+            <p>Have no account yet?</p>
+            <Button name="Register" color="secondary" />
         </form>
     </div>
 )

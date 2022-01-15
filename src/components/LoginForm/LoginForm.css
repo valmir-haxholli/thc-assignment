@@ -1,3 +1,35 @@
 .login h2 {
     font-family: "Gotham Bold";
 }
+
+.login__input {
+    min-width: 500px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.login__input input {
+    width: 100%;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #828282;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 10px 40px;
+}
+
+.login__input .input__img {
+    position: absolute;
+    left: 13px;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.login__input .img--lock {
+    position: absolute;
+    right: 13px;
+    left: initial;
+    bottom: 50%;
+    transform: translateY(50%);
+}
