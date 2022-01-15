@@ -1,21 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { connect } from "react-redux";
 import Login from './containers/Login';
-import { ReactComponent as Logo } from './assets/images/Logo.svg';
+import Dashboard from "./components/Dashboard/Dashboard";
 
 import './App.css';
 
-function App() {
+function App({ auth }) {
   return (
     <div className="container">
-        <div className='content'>
-          <div className='content__left'>
-              <Logo className="content__logo" />
-          </div>
-          <div className='content__right'>
-              <Login />
-          </div>
-        </div>
+      <Router>
+        <Routes>
+          <Route exact element={<Login />} path="/" />
+          <Route exact element={<Dashboard />} path="/dashboard" />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+export default connect(mapStateToProps)(App);
