@@ -20,9 +20,9 @@ const LoginForm = () => (
                 <input placeholder="Password" type="password" />
                 <View className="input__img img--lock" />
             </div>
-            <p>Forgot password?</p>
+            <p className="form__password">Forgot password?</p>
             <Button name="Log In" color="primary" />
-            <p>Have no account yet?</p>
+            <p className="form__register">Have no account yet?</p>
             <Button name="Register" color="secondary" />
         </form>
     </div>

@@ -1,5 +1,12 @@
 .login h2 {
     font-family: "Gotham Bold";
+    text-align: center;
+    margin-bottom: 64px;
+    font-size: 24px;
+}
+
+.login, .login button, .login input::placeholder {
+    font-family: "Gotham Medium";
 }
 
 .login__input {
@@ -16,7 +23,7 @@
     border: 1px solid #828282;
     box-sizing: border-box;
     border-radius: 4px;
-    padding: 10px 40px;
+    padding: 10px 50px;
 }
 
 .login__input .input__img {
@@ -32,4 +39,16 @@
     left: initial;
     bottom: 50%;
     transform: translateY(50%);
+}
+
+.form__password {
+    text-align: right;
+    margin-bottom: 32px;
+    color: #0B6C9F;
+}
+
+.form__register {
+    text-align: center;
+    margin-bottom: 36px;
+    color: #828282;
 }
