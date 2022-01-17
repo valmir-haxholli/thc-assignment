@@ -1,0 +1,42 @@
+.sidebar {
+    width: 330px;
+    margin: 40px 115px;
+    background: #fff;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.sidebar__item {
+    display: flex;
+    align-items: center;
+    padding: 20px 0 20px 30px;
+    position: relative;
+}
+
+
+.sidebar__item p {
+    padding-left: 11px;
+    text-transform: uppercase;
+    color: #181818;
+}
+
+.sidebar--active {
+    padding-left: 45px;
+}
+
+.sidebar--active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background-color: #0275B1;
+}
+
+.sidebar--active p {
+    opacity: .6;
+}
+
+.sidebar__item:not(last-child) {
+    border-bottom: 1px solid #F4F4F4;
+}
