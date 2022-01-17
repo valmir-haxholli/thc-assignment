@@ -17,7 +17,10 @@ const Navbar = () => (
                     <p>Network</p>
                 </div>
                 <div className='navbar__logo'>
-                    <Chat />
+                    <div className='notification'>
+                        <span className='notification__content'></span>
+                        <Chat />
+                    </div>
                     <p>Chat</p>
                 </div>
             </div>

@@ -38,6 +38,31 @@
     padding: 0 20px;
 }
 
+.navbar__logo .notification {
+    position: relative;
+    display: inline-block;
+}
+
+.notification__content {
+    position: absolute;
+    background: linear-gradient(215.49deg, #FFB75E 5.4%, #ED8F03 93.45%);
+    top: -5px;
+    right: -5px;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+}
+
+.notification__content::after {
+    content: "1";
+    color: #fff;
+    font-size: 9px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
 .navbar__logo svg {
     margin-bottom: 5px;
 }
