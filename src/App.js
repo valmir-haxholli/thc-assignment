@@ -1,25 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { connect } from "react-redux";
-import Login from './containers/Login';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LoginForm from './components/LoginForm/LoginForm';
 import Dashboard from "./components/Dashboard/Dashboard";
+import { PrivateRoute } from './helpers/PrivateRoute';
 
 import './App.css';
 
-function App({ auth }) {
+function App() {
   return (
     <div className="container">
       <Router>
-        <Routes>
-          <Route exact element={<Login />} path="/" />
-          <Route exact element={<Dashboard />} path="/dashboard" />
-        </Routes>
+        <Switch>
+        <Route exact path="/" component={LoginForm} />
+					<PrivateRoute exact path="/dashboard">
+						<Dashboard />
+					</PrivateRoute>
+					<Route path="*">
+						<h1>404 Page not found</h1>
+					</Route>
+        </Switch>
       </Router>
     </div>
   );
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth
-})
 
-export default connect(mapStateToProps)(App);
+
+export default App;

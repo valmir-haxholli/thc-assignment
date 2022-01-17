@@ -1,4 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { connect, useDispatch, useSelector } from "react-redux";
+
+import { loginFail, loginPending, loginSuccess } from "../../redux/loginSlice";
+import { userLogin } from "../../api/userApi";
 
 import Button from "../Button/Button"; 
 
@@ -11,13 +16,42 @@ import { ReactComponent as View } from '../../assets/images/view.svg';
 
 import "./LoginForm.css";
 
-function LoginForm({ login }) {
+function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function handleSubmit(e) {
+    const history = useHistory();
+
+    const { isLoading, isAuth, error } = useSelector(state => state.login)
+
+    useEffect(() => {
+        sessionStorage.getItem('authentication_token') &&
+        history.push('/dashboard')
+    }, [history])
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        login({ email, password })
+
+        if(!email || !password) {
+            return alert("Fill up all the form");
+        }
+
+        dispatch(loginPending());
+
+        try {
+            const isAuth = await userLogin({email, password});
+            if(isAuth.state === 'error') {
+                return dispatch(loginFail(isAuth.message));
+            }
+            dispatch(loginSuccess())
+            history.push('/dashboard')
+        } catch (error) {
+            dispatch(loginFail(error.message))
+            alert("Authentification not working, try with different user")
+        }
+        
     }
 
     return (
@@ -49,5 +83,6 @@ function LoginForm({ login }) {
         
     )
 } 
+
 
 export default LoginForm;
