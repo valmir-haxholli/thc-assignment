@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { connect, useDispatch, useSelector } from "react-redux";
 
 import { loginFail, loginPending, loginSuccess } from "../../redux/loginSlice";
-import { userLogin } from "../../api/userApi";
+import { userLogin, handleTokenRefresh } from "../../api/userApi";
 
 import Button from "../Button/Button"; 
 
@@ -46,7 +46,8 @@ function LoginForm() {
                 return dispatch(loginFail(isAuth.message));
             }
             dispatch(loginSuccess())
-            history.push('/dashboard')
+            handleTokenRefresh();
+            history.push('/dashboard');
         } catch (error) {
             dispatch(loginFail(error.message))
             alert("Authentification not working, try with different user")
