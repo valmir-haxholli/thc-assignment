@@ -52,6 +52,7 @@
     justify-content: space-between;
     padding: 25px 30px;
     margin-bottom: 10px;
+    background: #fff;
 }
 
 .friends img, .recent__single img {
@@ -112,7 +113,6 @@
 }
 
 .connections__tab {
-    background: #fff;
     border-radius: 4px;
 }
 
