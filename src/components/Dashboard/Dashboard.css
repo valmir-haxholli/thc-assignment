@@ -137,6 +137,7 @@
     display: flex;
     width: 100%;
     justify-content: inherit;
+    align-items: center;
 }
 
 .recent__single {
