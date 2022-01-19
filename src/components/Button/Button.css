@@ -8,6 +8,7 @@
     margin-bottom: 36px;
     font-size: 12px;
     font-family: "Gotham Medium";
+    cursor: pointer;
 }
 
 .btn--primary {
@@ -19,4 +20,13 @@
     background: #FFFFFF;
     border: 1px solid #0770A6;
     color: #0B6C9F;
+}
+
+.btn--primary:hover {
+    background: linear-gradient(180deg, #0077B5 0%, #0b4d6e 100%);
+}
+
+.btn--secondary:hover {
+    background: linear-gradient(180deg, #0077B5 0%, #0E6795 100%);
+    color: #fff;
 }

@@ -12,7 +12,7 @@ import { ReactComponent as Logo } from '../../assets/images/Logo.svg';
 import { ReactComponent as Mail } from '../../assets/images/mail.svg';
 import { ReactComponent as Lock } from '../../assets/images/lock.svg';
 import { ReactComponent as View } from '../../assets/images/view.svg';
-
+import { ReactComponent as Spinner } from '../../assets/images/spinner.svg';
 
 import "./LoginForm.css";
 
@@ -77,6 +77,7 @@ function LoginForm() {
                     <Button name="Log In" color="primary" />
                     <p className="form__register">Have no account yet?</p>
                     <Button name="Register" color="secondary" />
+                    {isLoading ? <div className="login__spinner"><h3>Logging In</h3><Spinner /></div> : ''}
                 </form>
             </div>
           </div>

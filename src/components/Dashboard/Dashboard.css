@@ -123,6 +123,11 @@
     border: 1px solid #E7E7E7;
 }
 
+.friends button:last-child:hover {
+    color: #fff;
+    border-color: none;
+}
+
 .recent__connections {
     display: flex;
     flex-wrap: wrap;
@@ -153,3 +158,4 @@
 .single__detail {
     display: flex;
 }
+
