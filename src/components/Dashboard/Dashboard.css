@@ -97,6 +97,18 @@
     width: 50%;
     opacity: .6;
     font-family: "Gotham Book";
+    position: relative;
+}
+
+.friends__msg::after {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: #0275B1;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .connections__tab {
