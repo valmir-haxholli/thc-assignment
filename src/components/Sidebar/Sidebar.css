@@ -5,6 +5,7 @@
     background: #fff;
     display: inline-block;
     border-radius: 4px;
+    height: fit-content;
 }
 
 .sidebar__item {

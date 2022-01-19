@@ -22,7 +22,6 @@ export const userLogin = ({ email, password }) => {
 
 export const handleTokenRefresh = () => {
     const refreshToken = sessionStorage.getItem('authentication_token');
-    console.log(refreshToken);
     return new Promise((resolve, reject) => {
         axios.post('https://thc-ui-api.thrivecoin.com/v1/users/refresh_token', { refreshToken })
             .then(({data}) => {

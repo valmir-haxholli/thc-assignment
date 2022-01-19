@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { connect, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { loginFail, loginPending, loginSuccess } from "../../redux/loginSlice";
 import { userLogin, handleTokenRefresh } from "../../api/userApi";
@@ -22,7 +22,7 @@ function LoginForm() {
 
     const history = useHistory();
 
-    const { isLoading, isAuth, error } = useSelector(state => state.login)
+    const { isLoading, error } = useSelector(state => state.login)
 
     useEffect(() => {
         sessionStorage.getItem('authentication_token') &&
@@ -78,6 +78,7 @@ function LoginForm() {
                     <p className="form__register">Have no account yet?</p>
                     <Button name="Register" color="secondary" />
                     {isLoading ? <div className="login__spinner"><h3>Logging In</h3><Spinner /></div> : ''}
+                    {error ? <h3>Something went wrong, try again</h3> : ''}
                 </form>
             </div>
           </div>
