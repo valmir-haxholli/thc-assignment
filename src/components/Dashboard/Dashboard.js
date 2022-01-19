@@ -13,8 +13,8 @@ const Dashboard = () => {
 
   const [connections, setConnections] = useState();
   const [invitations, setInvitations] = useState();
-
   const [active, setActive] = useState(0);
+
   const handleClick = e => {
     const index = parseInt(e.target.id, 0);
     if (index !== active) {
@@ -78,7 +78,7 @@ const Dashboard = () => {
                         </Content>
                         <Content active={active === 1}>
                           <div className='connections__tab'>
-                            {invitations?.data?.invitations.filter(invitation => invitation.invitation_type === 'sent').map(invitation => (
+                            {invitations?.data?.invitations.filter(invitation => invitation.invitation_type === 'sent').map(invitation => ( 
                               <div  className='friends'>
                               <div className='friends__details'>
 
@@ -95,8 +95,27 @@ const Dashboard = () => {
                           </div>
                         </Content>
                         </>
+                        <div className='recent'>
+                          <div className='connections'>
+                            <p>Recent connections</p>
+                          </div> 
+                          <div className='recent__connections'>
+                          {connections?.data?.connections.map(connection => (
+                              <div className='recent__single'>
+                              <div className='single__detail'>
+                                <img src={connection.image_url} alt="" />
+                                <div className='recent__info'>
+                                  <h3>{connection.name}</h3>
+                                  <p>{connection.title}</p>
+                                </div>
+                              </div>
+                              <p className='connection__date'>{connection.connection_date}</p>
+                              </div>
+                           ))}
+                          </div>
+                        </div>
                     </div>
-                </div> 
+                </div>
             </div>
         )
     )

@@ -54,7 +54,7 @@
     margin-bottom: 10px;
 }
 
-.friends img {
+.friends img, .recent__single img {
     width: 52px;
     height: 52px;
     border-radius: 100%;
@@ -65,24 +65,31 @@
     align-items: center;
 }
 
-.friends__info {
+.friends__info, .recent__info {
     padding-left: 15px;
 }
 
-.friends__info p {
+.friends__info p, .single__detail p {
     padding-top: 4px;
     font-family: "Gotham Book";
+}
+
+.connection__date {
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    opacity: .3;
 }
 
 .friends__info p:last-child {
     color: #0275B1;
 }
 
-.friends__details h3{
+.friends__details h3, .single__detail h3{
     font-family: "Gotham Bold";
 }
 
-.friends p {
+.friends p, .recent__single p {
     font-size: 13px;
 }
 
@@ -114,4 +121,35 @@
 .friends button:last-child {
     color: #B7B7B7;
     border: 1px solid #E7E7E7;
+}
+
+.recent__connections {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.single__detail {
+    display: flex;
+    width: 100%;
+    justify-content: inherit;
+}
+
+.recent__single {
+    display: flex;
+    background: #fff;
+    width: 50%;
+    width: calc(50% - 65px);
+    margin: 0 10px 10px 0;
+    padding: 25px 30px;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.recent__single:nth-child(2n) {
+    margin-right: 0;
+}
+
+.single__detail {
+    display: flex;
 }
