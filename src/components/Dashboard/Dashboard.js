@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment';
 import { useState, useEffect } from 'react';
 
 import Navbar from '../Navbar/Navbar';
@@ -109,7 +110,7 @@ const Dashboard = () => {
                                   <p>{connection.title}</p>
                                 </div>
                               </div>
-                              <p className='connection__date'>{connection.connection_date}</p>
+                              <p className='connection__date'>{moment.utc(connection.connection_date).format("dddd, hh:mm")}</p>
                               </div>
                            ))}
                           </div>
