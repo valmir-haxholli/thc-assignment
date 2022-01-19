@@ -1,4 +1,17 @@
 .dashboard__content {
     height: 100vh;
     background-color: #F7F9FB;
+    display: flex;
+    padding-top: 115px;
+}
+
+.main {
+    width: calc(50% + 425px);
+    font-family: "Gotham Medium";
+}
+
+.main__tab {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 1px solid #E7E7E7;
 }
